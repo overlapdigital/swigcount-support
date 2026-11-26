@@ -1,0 +1,115 @@
+:root {
+  color-scheme: light;
+  --ink: #103d3b;
+  --muted: #41615d;
+  --teal: #006d59;
+  --mint: #e7f8f1;
+  --line: #c8ded7;
+  --paper: #fff;
+  --page: #f8fcfa;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font: 1rem/1.65 system-ui, sans-serif;
+}
+
+a { color: var(--teal); }
+a:hover { text-decoration-thickness: .14em; }
+:focus-visible { outline: 3px solid #a63540; outline-offset: 4px; }
+
+.shell {
+  width: min(100% - 2rem, 48rem);
+  margin-inline: auto;
+}
+
+.skip {
+  position: fixed;
+  z-index: 1;
+  top: .75rem;
+  left: .75rem;
+  padding: .6rem 1rem;
+  background: var(--paper);
+  transform: translateY(-200%);
+}
+
+.skip:focus { transform: none; }
+
+.site-header, .site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: .75rem;
+  padding-block: 1.125rem;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  margin-bottom: clamp(1rem, 5vw, 3rem);
+}
+
+.brand {
+  color: var(--ink);
+  font-family: ui-rounded, system-ui, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 850;
+  letter-spacing: -.04em;
+  text-decoration: none;
+}
+
+nav { display: flex; flex-wrap: wrap; gap: clamp(.75rem, 3vw, 1.5rem); }
+nav a { padding-block: .35rem; font-weight: 650; text-decoration: none; }
+nav a[aria-current], nav a:hover { text-decoration: underline; text-underline-offset: .26em; }
+
+.hero {
+  padding: clamp(1.25rem, 6vw, 3rem);
+  background: var(--mint);
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+}
+
+h1, h2 {
+  margin: 0 0 .65rem;
+  font-family: ui-rounded, system-ui, sans-serif;
+  font-weight: 850;
+  line-height: 1.15;
+  letter-spacing: -.035em;
+}
+
+h1 { font-size: clamp(2rem, 7vw, 3.4rem); }
+h2 { font-size: clamp(1.35rem, 4vw, 1.75rem); }
+p { margin: .55rem 0 1rem; }
+.hero p { max-width: 31rem; }
+
+.email-button {
+  display: inline-block;
+  padding: .65rem 1.05rem;
+  background: var(--teal);
+  color: var(--paper);
+  border-radius: .7rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.email-button:hover { text-decoration: underline; }
+.address { margin: .5rem 0 0; color: var(--muted); overflow-wrap: anywhere; }
+
+.faq, .contact, .policy h2 { margin-top: 2.25rem; }
+.card { background: var(--paper); border: 1px solid var(--line); border-radius: 1rem; }
+details + details { border-top: 1px solid var(--line); }
+summary { padding: .9rem 1rem; cursor: pointer; font-weight: 750; }
+details p { margin: 0; padding: 0 1rem 1rem; color: var(--muted); }
+.updated { color: var(--muted); }
+.policy a { overflow-wrap: anywhere; }
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 2.5rem;
+  color: var(--muted);
+  font-size: .95rem;
+}
